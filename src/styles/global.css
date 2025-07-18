@@ -2,6 +2,17 @@
 .fade-in {
   animation: fadeIn 1s ease-in-out both;
 }
+.animated-link {
+  -webkit-tap-highlight-color: transparent;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.animated-link:focus,
+.animated-link:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 @keyframes fadeIn {
   from {
