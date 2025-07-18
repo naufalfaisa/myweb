@@ -1,0 +1,17 @@
+---
+const { title = "Naufal Faisa" } = Astro.props;
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/30e070011a.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-white dark:bg-[#090e13] text-zinc-800 dark:text-white font-sans">
+    <slot />
+  </body>
+</html>
