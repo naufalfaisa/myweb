@@ -5,27 +5,31 @@ import DarkToggle from "../components/DarkToggle.astro";
 ---
 
 <BaseLayout title="Naufal Faisa">
-  <!-- COVER sebagai background -->
+  <!-- COVER -->
   <div
     class="w-full h-[300px] md:h-[400px] bg-cover bg-center"
     style="background-image: url('/cover.png');"
   ></div>
 
   <!-- AVATAR + INFO -->
-  <main class="flex flex-col md:flex-row items-start gap-6 px-6 pt-10 max-w-5xl mx-auto">
+  <main class="fade-in flex flex-col md:flex-row items-start gap-6 px-6 pt-10 max-w-5xl mx-auto">
     <img
       src="/avatar.jpg"
       alt="Avatar"
-      class="w-40 h-auto shadow-lg border border-zinc-200 dark:border-zinc-700 transition-transform duration-300 hover:scale-105"
+      class="w-40 h-auto shadow-lg border border-zinc-200 dark:border-zinc-700 transition-all duration-300 hover:scale-105"
     />
 
     <div class="flex-1">
-      <h1 class="text-3xl font-bold text-fuwari">Naufal Faisa</h1>
+      <h1 class="text-3xl font-bold text-fuwari relative inline-block">
+        <span>Naufal Faisa</span>
+        <span class="absolute bottom-0 left-0 w-0 h-1 bg-fuwari transition-all duration-300 group-hover:w-full"></span>
+      </h1>
+      
       <p class="mt-2 text-zinc-600 dark:text-zinc-300">
         Web Developer & Enthusiast of Japanese Design.<br />
       </p>
 
-      <!-- Link ke Blog -->
+      <!-- Link to Blog -->
       <a
         href="https://blog.naufalfaisa.my.id"
         class="animated-link relative inline-block mt-4 px-5 py-2 rounded-full font-medium text-fuwari 
@@ -35,7 +39,6 @@ import DarkToggle from "../components/DarkToggle.astro";
           class="absolute inset-0 bg-fuwari translate-x-[-100%] 
                 group-[.clicked]:translate-x-0 transition-transform duration-500 ease-out"
         ></span>
-
         <span
           class="relative z-10 group-[.clicked]:text-white transition-colors duration-500"
         >
@@ -43,7 +46,7 @@ import DarkToggle from "../components/DarkToggle.astro";
         </span>
       </a>
 
-      <SocialIcons class="mt-4" />
+      <SocialIcons class="mt-4 " />
     </div>
   </main>
 
@@ -53,6 +56,5 @@ import DarkToggle from "../components/DarkToggle.astro";
   </footer>
 
   <!-- Toggle -->
-  <DarkToggle />
-
+  <DarkToggle class="p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors" />
 </BaseLayout>
