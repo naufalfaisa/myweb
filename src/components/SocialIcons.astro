@@ -1,17 +1,40 @@
 ---
 const className = Astro.props.class ?? "";
----
 
+// Global class for <a> wrapper
+const linkClass = "animated-social group relative transition duration-300";
+
+// Global class for <i> icon
+const iconClass = "relative z-10 transition duration-300 group-[.clicked]:scale-110 group-[.clicked]:text-fuwari";
+
+// Social media list (bisa ditambah kapan pun)
+const socials = [
+  {
+    href: "https://github.com/naufalfaisa",
+    icon: "fab fa-github",
+    label: "GitHub",
+  },
+  {
+    href: "https://twitter.com/naufalfaisa",
+    icon: "fab fa-x-twitter",
+    label: "Twitter",
+  },
+  {
+    href: "https://facebook.com/naufalfaisa17",
+    icon: "fa-brands fa-facebook",
+    label: "Facebook",
+  },
+  {
+    href: "https://instagram.com/naufalfaisa_",
+    icon: "fa fa-instagram",
+    label: "Instagram",
+  },
+];
+---
 <div class={`flex gap-4 text-2xl ${className}`}>
-  <a href="https://github.com/naufalfaisa" target="_blank" aria-label="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://twitter.com/naufalfaisa" target="_blank" aria-label="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-  <a href="https://facebook.com/naufalfaisa17" aria-label="Facebook">
-    <i class="fa-brands fa-facebook"></i>
-  <a href="https://instagram.com/naufalfaisa_" aria-label="Instagram">
-    <i class="fa fa-instagram"></i>
-  </a>
+  {socials.map((s) => (
+    <a href={s.href} target="_blank" aria-label={s.label} class={linkClass}>
+      <i class={`${s.icon} ${iconClass}`}></i>
+    </a>
+  ))}
 </div>

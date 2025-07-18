@@ -28,18 +28,17 @@ import DarkToggle from "../components/DarkToggle.astro";
       <!-- Link ke Blog -->
       <a
         href="https://blog.naufalfaisa.my.id"
-        class="relative inline-block mt-4 px-5 py-2 rounded-full font-medium text-fuwari 
+        class="animated-link relative inline-block mt-4 px-5 py-2 rounded-full font-medium text-fuwari 
               bg-[#e6f0ff] dark:bg-[#101823] overflow-hidden group"
-        target="_blank" rel="noopener noreferrer"
       >
-        <!-- Layer animasi isi -->
         <span
-          class="absolute inset-0 bg-fuwari translate-x-[-100%] group-hover:translate-x-0 
-                transition-transform duration-500 ease-out"
+          class="absolute inset-0 bg-fuwari translate-x-[-100%] 
+                group-[.clicked]:translate-x-0 transition-transform duration-500 ease-out"
         ></span>
 
-        <!-- Teks tombol -->
-        <span class="relative z-10 group-hover:text-white transition-colors duration-500">
+        <span
+          class="relative z-10 group-[.clicked]:text-white transition-colors duration-500"
+        >
           My Blog &rarr;
         </span>
       </a>
@@ -55,4 +54,5 @@ import DarkToggle from "../components/DarkToggle.astro";
 
   <!-- Toggle -->
   <DarkToggle />
+
 </BaseLayout>

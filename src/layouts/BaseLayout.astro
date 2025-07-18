@@ -13,5 +13,11 @@ const { title = "Naufal Faisa" } = Astro.props;
   </head>
   <body class="bg-white dark:bg-[#090e13] text-zinc-800 dark:text-white font-sans">
     <slot />
+
+    <script type="module">
+      import setupAnimatedLinks from "/src/scripts/AnimatedLinks.js";
+      setupAnimatedLinks();
+    </script>
+    
   </body>
 </html>
